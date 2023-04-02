@@ -43,10 +43,12 @@ return {
   tab_active_fg = get_hlgroup("TabLineSel").fg,
   tab_active_bg = get_hlgroup("TabLineSel").bg,
   inactive = get_hlgroup("HeirlineInactive").fg,
-  normal = get_hlgroup("HeirlineNormal").fg,
-  insert = get_hlgroup("HeirlineInsert").fg,
-  visual = get_hlgroup("HeirlineVisual").fg,
-  replace = get_hlgroup("HeirlineReplace").fg,
-  command = get_hlgroup("HeirlineCommand").fg,
-  terminal = get_hlgroup("HeirlineTerminal").fg,
+  normal = get_hlgroup("HeirlineNormal").bg,
+  -- Mode Foreground
+  mode_fg = get_hlgroup("StatusLine").bg,
+  insert = get_hlgroup("HeirlineInsert").bg,
+  visual = get_hlgroup("HeirlineVisual").bg,
+  replace = get_hlgroup("HeirlineReplace").bg,
+  command = get_hlgroup("HeirlineCommand").bg,
+  terminal = get_hlgroup("HeirlineTerminal").bg,
 }
