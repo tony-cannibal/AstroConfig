@@ -17,7 +17,7 @@ return {
         hl = { fg = "fg", bg = "bg" },
         status.component.mode { mode_text = { padding = { left = 1, right = 1 } } },
         status.component.git_branch(),
-        status.component.file_info { filetype = {}, filename = false, file_modified = false },
+        status.component.file_info { filetype = false, filename = {}, file_modified = false },
         status.component.git_diff(),
         status.component.diagnostics(),
         status.component.fill(),
@@ -60,11 +60,11 @@ return {
           hl = { bg = "tabline_bg" },
         },
         status.heirline.make_buflist(status.component.tabline_file_info()), -- component for each buffer tab
-        status.component.fill { hl = { bg = "tabline_bg" } }, -- fill the rest of the tabline with background color
+        status.component.fill { hl = { bg = "tabline_bg" } },               -- fill the rest of the tabline with background color
         {
           -- tab list
           condition = function() return #vim.api.nvim_list_tabpages() >= 2 end, -- only show tabs if there are more than one
-          status.heirline.make_tablist { -- component for each tab
+          status.heirline.make_tablist {                                        -- component for each tab
             provider = status.provider.tabnr(),
             hl = function(self) return status.hl.get_attributes(status.heirline.tab_type(self, "tab"), true) end,
           },
@@ -80,11 +80,11 @@ return {
         },
       },
       statuscolumn = vim.fn.has "nvim-0.9" == 1 and {
-        status.component.foldcolumn(),
-        status.component.fill(),
-        status.component.numbercolumn(),
-        status.component.signcolumn(),
-      } or nil,
+            status.component.foldcolumn(),
+            status.component.fill(),
+            status.component.numbercolumn(),
+            status.component.signcolumn(),
+          } or nil,
     }
   end,
   config = require "plugins.configs.heirline",
