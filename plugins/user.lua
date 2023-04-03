@@ -15,4 +15,15 @@ return {
       vim.g.sonokai_style = "shusia"
     end,
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    opts = {
+      italic = {
+        strings = false,
+        comments = false,
+        operators = false,
+        folds = false,
+      },
+    },
+  },
 }

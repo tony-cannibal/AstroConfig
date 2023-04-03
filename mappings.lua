@@ -23,9 +23,34 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     [";"] = { ":", desc = "Command" },
+    ["<C-a>"] = { "gg<S-v>G", desc = "Select All" },
+    ["x"] = { '"_x', desc = "No yank with x" },
+    ["+"] = { "<C-a>", desc = "Increase" },
+    ["-"] = { "<C-x>", desc = "Decrease" },
+    ["dw"] = { 'vb"_d', desc = "Delete Word Backwards" },
+    -- Page Nav
+    ["<C-d>"] = { "<C-d>zz", desc = "Page Down" },
+    ["<C-u>"] = { "<C-u>zz", desc = "Page Up" },
+    -- Buffer Navigation
+    ["<C-l>"] = { ":bnext<CR>", desc = "Next Buffer" },
+    ["<C-h>"] = { ":bprevious<CR>", desc = "Previous Buffer" },
+    -- Window Navigation
+    ["<S-l>"] = { "<C-w>l", desc = "Window Navigation" },
+    ["<S-h>"] = { "<C-w>h", desc = "Window Navigation" },
+    ["<S-j>"] = { "<C-w>j", desc = "Window Navigation" },
+    ["<S-k>"] = { "<C-w>k", desc = "Window Navigation" },
+    ["<leader>v"] = { ":vsplit<CR>", desc = "Vertical Split" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  v = {
+    [">"] = { ">gv", desc = "Stay in indent Mode" },
+    ["<"] = { "<gv", desc = "Stay in indent Mode" },
+  },
+  x = {
+    ["J"] = { ":move '>+1<CR>gv-gv", desc = "Line Down" },
+    ["K"] = { ":move '<-2<CR>gv-gv", desc = "Line Down" },
   },
 }
